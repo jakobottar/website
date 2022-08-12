@@ -1,10 +1,14 @@
+log:
+  level: debug
 api:
   debug: false
   dashboard: false
 global:
   sendAnonymousUsage: false
 providers:
-  docker: {}
+  docker:
+    watch: true
+    endpoint: "unix:///var/run/docker.sock"
 ping:
   entryPoint: web
 entryPoints:
