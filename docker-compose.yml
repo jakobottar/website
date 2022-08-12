@@ -4,4 +4,35 @@ services:
     image: "ghcr.io/jakobottar/jakobjdev:stable"
     restart: unless-stopped
     ports:
-      - 8000:80
+      - 4001:80
+  traefik:
+    container_name: traefik
+    image: traefik:latest
+    restart: unless-stopped 
+    command: --api.insecure=false --providers.docker --configFile=/config/traefik.yml
+
+    ports:
+      - 80:80
+      - 443:443
+
+    # environment:
+      # - CF_API_EMAIL=${CF_API_EMAIL}
+      # - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
+      # - CF_ZONE_API_TOKEN=${CF_ZONE_API_TOKEN}
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /traefik.yml:/config/traefik.yml
+      # - /ssd/app/traefik/traefik.yml:/traefik.yml
+      # - /ssd/app/traefik/dynamic_conf.yml:/dynamic_conf.yml
+      # - /ssd/app/traefik/acme.json:/acme.json
+      # - /etc/localtime:/etc/localtime:ro
+
+    labels:
+      - traefik.enable=true
+      # - traefik.http.routers.api.rule=Host(`tr.{{ domain }}`)
+      # - traefik.http.routers.api.entrypoints=https
+      # - traefik.http.routers.api.tls.certresolver=default
+      # - traefik.http.routers.api.service=api@internal
+      # - traefik.http.routers.api.middlewares=auth
+      # - traefik.http.middlewares.auth.basicauth.users=${TRAEFIK_USERS}
