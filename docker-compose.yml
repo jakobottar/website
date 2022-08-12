@@ -1,7 +1,7 @@
 services:
   jakobjdev:
     container_name: jakobjdev
-    image: "containous/whoami"
+    image: "ghcr.io/jakobottar/jakobjdev:stable"
     labels:
       - traefik.enable=true
       - traefik.http.routers.jakobjdev.rule=Host(`jakobj.dev`)
@@ -16,15 +16,14 @@ services:
   traefik:
     container_name: traefik
     image: traefik:latest
-    restart: unless-stopped 
+    restart: unless-stopped
     command: --api.insecure=true --configFile=/config/traefik.yml
     networks:
       - default
     ports:
       - 80:80
       - 443:443
-
-    # environment:
+      # environment:
       # - CF_API_EMAIL=${CF_API_EMAIL}
       # - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
       # - CF_ZONE_API_TOKEN=${CF_ZONE_API_TOKEN}
@@ -37,7 +36,7 @@ services:
       # - /ssd/app/traefik/acme.json:/acme.json
       # - /etc/localtime:/etc/localtime:ro
 
-    # labels:
+      # labels:
       # - traefik.enable=true
       # - traefik.http.routers.api.rule=Path(`/dashboard`)
       # - traefik.http.routers.api.entrypoints=web
