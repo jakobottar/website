@@ -3,6 +3,8 @@ api:
   dashboard: false
 global:
   sendAnonymousUsage: false
+providers:
+  docker: {}
 ping:
   entryPoint: web
 entryPoints:

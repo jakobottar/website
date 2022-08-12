@@ -2,6 +2,8 @@ services:
   jakobjdev:
     container_name: jakobjdev
     image: "ghcr.io/jakobottar/jakobjdev:stable"
+    labels:
+      - traefik.http.routers.jakobjdev.rule=Path(`/hugo`)
     restart: unless-stopped
     ports:
       - 4001:80
@@ -22,7 +24,7 @@ services:
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /traefik.yml:/config/traefik.yml
+      - ./traefik.yml:/config/traefik.yml
       # - /ssd/app/traefik/traefik.yml:/traefik.yml
       # - /ssd/app/traefik/dynamic_conf.yml:/dynamic_conf.yml
       # - /ssd/app/traefik/acme.json:/acme.json
