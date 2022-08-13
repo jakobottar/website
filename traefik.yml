@@ -1,16 +1,22 @@
 log:
-  level: debug
+  level: info
+
 api:
   debug: false
   dashboard: false
+  
 global:
   sendAnonymousUsage: false
+
 providers:
   docker:
     watch: true
     endpoint: "unix:///var/run/docker.sock"
+    network: website_web
+
 ping:
   entryPoint: web
+
 entryPoints:
   web:
     address: :80
@@ -22,3 +28,12 @@ entryPoints:
           permanent: true
   websecure:
     address: :443
+
+certificatesResolvers:
+  mycerts:
+    acme:
+      email: jakobottar@pm.me
+      storage: acme.json
+      httpChallenge:
+        entryPoint: web
+
