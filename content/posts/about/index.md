@@ -1,6 +1,6 @@
 ---
 title: "About this Website"
-date: 2022-08-12T09:45:18-06:00
+date: 2022-08-12
 draft: false
 ---
 

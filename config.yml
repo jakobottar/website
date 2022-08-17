@@ -21,7 +21,7 @@ params:
     ShowBreadCrumbs: true
     ShowCodeCopyButtons: true
     ShowRssButtonInSectionTermList: true
-    ShowToc: false
+    ShowToc: true
     # comments: false
     # images: ["papermod-cover.png"]
 
@@ -51,3 +51,9 @@ params:
           url: "https://twitter.com/jakobottar"
         - name: strava
           url: "https://www.strava.com/athletes/jakobottar"
+
+    assets:
+        favicon: "/favicon.ico"
+        favicon16x16: "/favicon-16x16.png"
+        favicon32x32: "/favicon-32x32.png"
+
