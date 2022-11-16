@@ -2,6 +2,7 @@
 title: "Python Management with Pyenv"
 date: 2022-08-17
 draft: false
+tags: ["Python"]
 ---
 
 ## Why use Pyenv?

@@ -2,6 +2,7 @@
 title: "About this Website"
 date: 2022-08-12
 draft: false
+tags: ["Photography"]
 ---
 
 Hello there! Welcome to my personal website and/or blog! This'll be a place to post my random tutorials as well as some life blogging/travel photos. I like to take photos and this'll be a fantastic place to post them!

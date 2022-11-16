@@ -4,56 +4,54 @@ title: 'Jakob Johnson'
 theme: "papermod"
 enableEmoji: true
 googleAnalytics: UA-136943577-1
+buildDrafts: true
+
+menu:
+  main:
+    - identifier: About
+      name: About
+      url: /about/
+      weight: 10
+    - identifier: Tags
+      name: Tags
+      url: /tags/
+      weight: 20
 
 params:
-    env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "Personal Website for Jakob Johnson"
-    author: Jakob Johnson
-    # author: ["Me", "You"] # multiple authors
+  env: production
+  description: "Personal Website for Jakob Johnson"
+  author: Jakob Johnson
 
-    defaultTheme: auto
-    disableThemeToggle: false
-    ShowShareButtons: false
-    ShowReadingTime: false
-    # disableSpecial1stPost: true
-    displayFullLangName: false
-    ShowPostNavLinks: false
-    ShowBreadCrumbs: true
-    ShowCodeCopyButtons: true
-    ShowRssButtonInSectionTermList: true
-    ShowToc: true
-    # comments: false
-    # images: ["papermod-cover.png"]
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowShareButtons: false
+  ShowReadingTime: false
+  displayFullLangName: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowToc: true
 
-    # profileMode:
-    #     enabled: false
-    #     title: PaperMod
-    #     imageUrl: "#"
-    #     imageTitle: my image
-    #     # imageWidth: 120
-    #     # imageHeight: 120
-    #     buttons:
-    #         - name: Archives
-    #           url: archives
-    #         - name: Tags
-    #           url: tags
+  homeInfoParams:
+    Title: "Jakob Johnson"
+    Content: >
+      Hi, my name is Jakob Johnson. I'm a PhD student at the University of Utah studying image processing and computer vision. Read more about me and my research [here](/about/).
+  socialIcons:
+    - name: github
+      url: "https://github.com/jakobottar"
+    - name: email
+      url: "mailto:jakobottar@pm.me"
+    - name: twitter
+      url: "https://twitter.com/jakobottar"
+    - name: instagram
+      url: "https://instagram.com/jakobottar"
+    - name: strava
+      url: "https://www.strava.com/athletes/jakobottar"
+  
 
-    homeInfoParams:
-        Title: "Jakob Johnson"
-        Content: >
-            Hi, my name is Jakob Johnson. I'm a PhD student at the University of Utah
-    socialIcons:
-        - name: github
-          url: "https://github.com/jakobottar"
-        - name: email
-          url: "mailto:jakobottar@pm.me"
-        - name: twitter
-          url: "https://twitter.com/jakobottar"
-        - name: strava
-          url: "https://www.strava.com/athletes/jakobottar"
-
-    assets:
-        favicon: "/favicon.ico"
-        favicon16x16: "/favicon-16x16.png"
-        favicon32x32: "/favicon-32x32.png"
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
 
