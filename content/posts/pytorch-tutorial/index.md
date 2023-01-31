@@ -1,7 +1,7 @@
 ---
 title: "Pytorch Tutorial"
 date: 2022-11-16T11:22:47-07:00
-draft: true
+draft: false
 tags: ["Python", "PyTorch"]
 ---
 
