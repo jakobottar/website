@@ -8,7 +8,8 @@ tags: ["Python", "PyTorch"]
 
 Most of the content here is from the [Official Pytorch tutorial](https://pytorch.org/tutorials/beginner/basics/intro.html). I made this to be more concise and to present to a class. 
 
-You can get the [notebook here](https://github.com/jakobottar/pytorch-tutorial) and the [cat image data here](https://www.dropbox.com/s/y1cxgxec95e181a/cat_images.zip?dl=0).
+You can get the [notebook here](https://github.com/jakobottar/pytorch-tutorial).
+<!-- and the [cat image data here](https://www.dropbox.com/s/y1cxgxec95e181a/cat_images.zip?dl=0). -->
 
 
 ## PyTorch Background
