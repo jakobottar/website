@@ -51,7 +51,7 @@ params:
   
 
   assets:
-    favicon: "/np.ico"
-    favicon16x16: "/np-16x16.png"
-    favicon32x32: "/np-32x32.png"
+    favicon: "/skier.ico"
+    favicon16x16: "/skier-16x16.png"
+    favicon32x32: "/skier-32x32.png"
 

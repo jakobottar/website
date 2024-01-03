@@ -24,4 +24,4 @@ I also love cycling in the summer and skiing in the winter.
 - [PL Season Explorer](https://jakobottar.github.io/pl-season-explorer/) - A class project, visualizing the 2020 Premier League season stats on the web using [D3.js](https://d3js.org/).
 
 ## Publications
-*in progress*
+- [Improving uranium oxide pathway discernment and generalizability using contrastive self-supervised learning, 2024](https://www.sciencedirect.com/science/article/pii/S0927025623007425) - Use multiple views of material with contrastive learning.
