@@ -3,7 +3,7 @@ languageCode: 'en-us'
 title: 'Jakob Johnson'
 theme: "papermod"
 enableEmoji: true
-googleAnalytics: UA-136943577-1
+# googleAnalytics: UA-136943577-1
 buildDrafts: true
 
 menu:
