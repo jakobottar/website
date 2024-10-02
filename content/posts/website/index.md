@@ -186,6 +186,19 @@ Run `bundle exec jekyll build` and `bundle exec jekyll serve` to see the changes
 
 ## Other Resources/Notes
 
+### Using cs.utah.edu home pages
+
+TODO: 
+
+### Newer versions of Jekyll
+
+Many themes rely on more recent versions of Jekyll than version `3.10` required in `github-pages`. You can often replace the `github-pages` gem with a few markdown converters such as 
+```Gemfile
+gem "jemoji"
+gem "kramdown-parser-gfm"
+```
+and still retain the same functionality. Remember, the GitHub Action is basically just `bundle install` & `jekyll build`.
+
 ### Other Generators
 
 GitHub Pages is pretty powerful and is able to serve statically generated sites from any generator (You just point it to the HTML files). You can also automate these with GitHub Actions as well.
@@ -196,3 +209,4 @@ GitHub Pages is pretty powerful and is able to serve statically generated sites 
 - [GitHub Docs: Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)
 - [Jekyll](https://jekyllrb.com/)
 - [Jekyll Themes](https://jekyllrb.com/docs/themes/)
+- [jakobottar.github.io](https://jakobottar.github.io/)
