@@ -42,8 +42,8 @@ params:
       url: "https://github.com/jakobottar"
     - name: email
       url: "mailto:jakobottar@pm.me"
-    # - name: twitter
-    #   url: "https://twitter.com/jakobottar"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/jakob-johnson-7496ba320/"
     - name: instagram
       url: "https://instagram.com/jakobottar"
     - name: strava
@@ -51,7 +51,7 @@ params:
   
 
   assets:
-    favicon: "/skier.ico"
-    favicon16x16: "/skier-16x16.png"
-    favicon32x32: "/skier-32x32.png"
+    favicon: "/np.ico"
+    favicon16x16: "/np-16x16.png"
+    favicon32x32: "/np-32x32.png"
 
