@@ -4,30 +4,44 @@ networks:
 
 services:
   jakobjdev:
-    container_name: jakobjdev
+    container_name: website 
+
     image: "ghcr.io/jakobottar/jakobjdev:stable"
+
+    networks:
+      - traefik_web
+
     labels:
       - traefik.enable=true
       - traefik.http.routers.jakobjdev.rule=Host(`jakobj.dev`)
-      - traefik.http.routers.jakobjdev.entrypoints=websecure
-      - traefik.http.services.jakobjdev.loadbalancer.server.port=8080
-      - traefik.http.routers.jakobjdev.tls.certresolver=mycerts
-    networks:
-      - web
+      - traefik.http.routers.jakobjdev.entrypoints=https
+      - traefik.http.routers.jakobjdev.service=jakobjdev@internal
     restart: unless-stopped
+    
+## Traefik Config
+# networks:
+#   web:
+#     driver: bridge
 
-  traefik:
-    container_name: traefik
-    image: traefik:latest
-    restart: unless-stopped
-    command: --api.insecure=true --configFile=/config/traefik.yml
-    networks:
-      - web
-    ports:
-      - 80:80
-      - 443:443
+# services:
+#   traefik:
+#     container_name: traefik
 
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./traefik.yml:/config/traefik.yml
-      - ./acme.json:/acme.json # must be 600 permissions
+#     image: traefik:latest
+
+#     volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock
+#       - ./traefik.yml:/config/traefik.yml
+#       - ./nextcloud.yml:/dyn_conf/nextcloud.yml
+#       - ./acme.json:/acme.json # must be 600 permissions
+
+#     ports:
+#       - 80:80
+#       - 443:443
+
+#     command: --api.insecure=true --configFile=/config/traefik.yml
+
+#     networks:
+#       - web
+
+#     restart: unless-stopped
