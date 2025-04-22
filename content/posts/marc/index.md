@@ -1,6 +1,6 @@
 ---
 title: "MARC Conference, Hawai'i"
-date: 2025-04-22T12:00:00-06:00
+date: 2025-04-22T9:00:00-06:00
 draft: false
 tags: ["Conference", "Photography", "Travel"]
 ---
@@ -8,8 +8,6 @@ tags: ["Conference", "Photography", "Travel"]
 {{< figure src="./beach1.jpg#center" caption="Kailua Bay (*Fujifilm X-S10, 18-55mm*)" >}}
 
 A few weeks ago, I had the opportunity to present my research at [MARC XIII](https://www.marcconference.org/) in Kailua-Kona, HI. It's the premier conference for nuclear forensics and nuclear chemistry. Since my work applies machine learning to nuclear forensics, it was a perfect venue to show off my work - and get to visit Hawai'i for the first time. 
-
-somecontet
 
 {{< figure src="./canoe.jpg#center" caption="Kamakanohu Beach and outrigger canoe (*Fujifilm X-S10, 18-55mm*)" >}}
 
