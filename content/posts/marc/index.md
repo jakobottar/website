@@ -7,21 +7,22 @@ tags: ["Conference", "Photography", "Travel"]
 
 {{< figure src="./beach1.jpg#center" caption="Kailua Bay (*Fujifilm X-S10, 18-55mm*)" >}}
 
-A few weeks ago, I had the opportunity to present my research at [MARC XIII](https://www.marcconference.org/) in Kailua-Kona, HI. It's the premier conference for nuclear forensics and nuclear chemistry. Since my work applies machine learning to nuclear forensics, it was a perfect venue to show off my work - and get to visit Hawai'i for the first time. 
+A few weeks ago, I had the opportunity to present my research at [MARC XIII](https://www.marcconference.org/) in Kailua-Kona, HI. It's the premier conference for nuclear forensics and nuclear chemistry. Since my research applies machine learning to nuclear forensics, it was a perfect venue to show off my work - and get to visit Hawai'i for the first time. 
 
 {{< figure src="./canoe.jpg#center" caption="Kamakanohu Beach and outrigger canoe (*Fujifilm X-S10, 18-55mm*)" >}}
 
-As a data scientist at a radiochemistry conference, I thought I'd be out of my depth, but was excited when I saw how many talks would be presented on data science or types of Imaging. On the final day, I sat in on a very interesting talk about neutron imaging.  From what I gather, it's similar to X-ray imaging, but shoots high-energy neutrons instead of X-ray radiation, allowing it to capture different materials.
+As a data scientist at a radiochemistry conference, I thought I'd be out of my depth, but was excited when I saw how many talks would be presented on data science or types of imaging. On the final day, I sat in on a very interesting session of talks about neutron imaging.  From what I gather, it's similar to X-ray imaging, but shoots high-energy neutrons instead of X-ray radiation, allowing it to capture different materials. Maybe there's an application for ML there!
 
 
 {{< figure src="./banquet.jpg#center" caption="The Thursday conference banquet at the hotel (*iPhone 15 Pro*)" >}}
 
-The work I presented on explored the use of data fusion to combine SEM imagery and XRD spectroscopy. I'll update this post with a link to the paper and poster when they've been published. My work was very well received at the conference, and I was lucky to have a busy poster session.
+The work I presented on explored the use of data fusion to combine SEM imagery and XRD spectroscopy. I'll update this post with a link to the paper and poster when they've been published. My work was very well received at the conference, and I had a busy poster session.
 
 {{< figure src="./poster.jpg#center" caption="Me at my poster presentation (*iPhone 15 Pro*)" >}}
 
-The conference had a cool, laid-back feel as a result of it being in Hawaii. Most presenters wore shorts and aloha shirts (including me). I think all of us from the mainland just exiting winter really appreciated the week in the sunny, warm weather.
-I was able to fit in a bit of tourist stuff, like an evening manta may snorkel trip and a hike through the jungle. I wanted to see the volcano, but it was a bit too far away. Sipping mai-tais on the beach was a solid replacement, though.
+The conference had a cool, laid-back feel as a result of it being in Hawai'i. Most presenters wore shorts and aloha shirts (including me). I think all of us from the mainland just leaving winter really appreciated the week in the sunny, warm weather.
+
+I was able to fit in a bit of tourist stuff, like an evening manta ray snorkel trip and a hike through the jungle. I wanted to see the volcano, but it was a bit too far away. Sipping mai-tais on the beach was a solid replacement, though.
 
 {{< figure src="./forest.jpg#center" caption="Makaula 'O'oma Trail (*Fujifilm X-S10, 18-55mm*)" >}}
 
