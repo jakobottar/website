@@ -16,7 +16,7 @@ As a data scientist at a radiochemistry conference, I thought I'd be out of my d
 
 {{< figure src="./banquet.jpg#center" caption="The Thursday conference banquet at the hotel (*iPhone 15 Pro*)" >}}
 
-The work I presented on explored the use of data fusion to combine SEM imagery and XRD spectroscopy. I'll update this post with a link to the paper and poster when they've been published. My work was very well received at the conference, and I had a busy poster session.
+The work I presented on explored the use of data fusion to combine SEM imagery and XRD spectroscopy. My work was very well received at the conference, and I had a busy poster session. Update: It's been published at the [Journal of Radioanalytical and Nuclear Chemistry](https://link.springer.com/10.1007/s10967-025-10474-8)
 
 {{< figure src="./poster.jpg#center" caption="Me at my poster presentation (*iPhone 15 Pro*)" >}}
 

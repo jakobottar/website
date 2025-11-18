@@ -25,3 +25,4 @@ I also love cycling in the summer and skiing in the winter.
 
 ## Publications
 - [Improving uranium oxide pathway discernment and generalizability using contrastive self-supervised learning, 2024](https://www.sciencedirect.com/science/article/pii/S0927025623007425) - Use multiple views of material with contrastive learning.
+- [An exploration of data fusion techniques applied to nuclear forensics, 2025](https://link.springer.com/10.1007/s10967-025-10474-8) - Combine multiple analysis modalities to improve model performance.
