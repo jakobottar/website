@@ -36,7 +36,7 @@ params:
   homeInfoParams:
     Title: "Jakob Johnson"
     Content: >
-      Hi, my name is Jakob Johnson. I'm a PhD student at the University of Utah studying image processing and computer vision. Read more about me and my research [here](/about/).
+      Hi, my name is Jakob Johnson. I'm a PhD candidate at the University of Utah studying image processing and computer vision. Read more about me and my research [here](/about/).
   socialIcons:
     - name: github
       url: "https://github.com/jakobottar"
