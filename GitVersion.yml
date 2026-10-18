@@ -1,0 +1,5 @@
+# GitVersion 6 defaults main to ContinuousDelivery, which yields versions like
+# 0.1.32-1. ContinuousDeployment keeps the plain 0.1.32 that 5.x produced.
+branches:
+  main:
+    mode: ContinuousDeployment
