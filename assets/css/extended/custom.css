@@ -1,0 +1,92 @@
+/*
+ * Wide / full-bleed figures and multi-image spreads.
+ * Used by layouts/shortcodes/figure-wide.html and layouts/shortcodes/spread.html.
+ */
+
+:root {
+    --wide-width: min(1100px, 100vw - 2 * var(--gap));
+    --full-width: 100vw;
+    --spread-gap: 6px;
+    --breakout-radius: 0;          /* 4px matches the theme's regular images */
+    --spread-item-caption: block;  /* none = hide per-image captions in spreads */
+}
+
+/*
+ * 100vw includes the always-on scrollbar (reset.css sets overflow-y: scroll),
+ * so measure against body instead: 100cqw = viewport minus scrollbar.
+ * The clip is a safety net for browsers without container queries.
+ */
+body {
+    container-type: inline-size;
+    overflow-x: clip;
+}
+
+@supports (width: 1cqw) {
+    :root {
+        --wide-width: min(1100px, 100cqw - 2 * var(--gap));
+        --full-width: 100cqw;
+    }
+}
+
+/* Breakout: stay in flow, then re-centre against the (centred) text column */
+.post-content .figure-wide,
+.post-content .spread.wide {
+    width: var(--wide-width);
+    margin-inline: calc(50% - var(--wide-width) / 2);
+}
+
+.post-content .figure-full,
+.post-content .spread.full {
+    width: var(--full-width);
+    margin-inline: calc(50% - var(--full-width) / 2);
+}
+
+.post-content :is(.figure-wide, .figure-full, .spread) img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: var(--breakout-radius);
+}
+
+/* Full-bleed captions would otherwise touch the screen edge */
+.post-content :is(.figure-full, .spread.full) > figcaption {
+    padding-inline: var(--gap);
+}
+
+/*
+ * Spreads: flex-basis 0 + flex-grow = aspect ratio gives every image the
+ * same height, (row width - gaps) / sum(ratios).
+ */
+.spread-row {
+    display: flex;
+    gap: var(--spread-gap);
+    align-items: flex-start;
+}
+
+.post-content .spread-row > figure {
+    flex: var(--ratio) 1 0;
+    min-width: 0;
+    margin: 0;
+}
+
+.post-content .spread-row > figure > figcaption {
+    display: var(--spread-item-caption);
+    margin: 6px 0 0;
+}
+
+.post-content .spread-row > figure > figcaption > p {
+    margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .spread-row {
+        flex-direction: column;
+    }
+
+    .post-content .figure-wide,
+    .post-content .spread.wide {
+        width: 100%;
+        margin-inline: 0;
+    }
+}
