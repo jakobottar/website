@@ -54,4 +54,5 @@ params:
     favicon: "/np.ico"
     favicon16x16: "/np-16x16.png"
     favicon32x32: "/np-32x32.png"
+    safari_pinned_tab: "/np.svg"
 
