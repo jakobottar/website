@@ -1,0 +1,56 @@
+{{- /*
+  2-3 images in one row at matching heights. One image per line, optional
+  caption after a "|".
+  {{< spread size="wide|full" caption="Optional caption for the row" >}}
+  left.jpg | Optional caption
+  right.jpg
+  {{< /spread >}}
+*/ -}}
+{{- $size := .Get "size" | default "wide" }}
+{{- if not (in (slice "wide" "full") $size) }}
+  {{- errorf "spread: size must be \"wide\" or \"full\", got %q in %s" $size .Position }}
+{{- end }}
+
+{{- $items := slice }}
+{{- $total := 0.0 }}
+{{- range split .Inner "\n" }}
+  {{- $line := trim . " \t\r" }}
+  {{- if $line }}
+    {{- $parts := split $line "|" }}
+    {{- $src := trim (index $parts 0) " \t" }}
+    {{- $caption := "" }}
+    {{- if gt (len $parts) 1 }}
+      {{- $caption = trim (delimit (after 1 $parts) "|") " \t" }}
+    {{- end }}
+    {{- $img := $.Page.Resources.GetMatch $src }}
+    {{- if not $img }}
+      {{- errorf "spread: image %q not found in page bundle (%s)" $src $.Position }}
+    {{- end }}
+    {{- $img = partial "oriented-img.html" $img }}
+    {{- $ratio := math.Div (float $img.Width) $img.Height }}
+    {{- $total = add $total $ratio }}
+    {{- $items = $items | append (dict "img" $img "caption" $caption "ratio" $ratio) }}
+  {{- end }}
+{{- end }}
+{{- if or (lt (len $items) 2) (gt (len $items) 3) }}
+  {{- warnf "spread: expected 2-3 images, got %d (%s)" (len $items) .Position }}
+{{- end }}
+
+{{- $rowWidth := cond (eq $size "full") "100vw" "min(1100px, 100vw - 48px)" }}
+<figure class="spread {{ $size }}">
+  <div class="spread-row">
+    {{- range $items }}
+    {{- $sizes := printf "(max-width: 700px) 100vw, calc((%s) * %.3f)" $rowWidth (math.Div .ratio $total) }}
+    {{- $alt := .caption | markdownify | plainify }}
+    <figure style="--ratio: {{ printf "%.4f" .ratio | safeCSS }}">
+      {{- partial "responsive-img.html" (dict "img" .img "sizes" $sizes "alt" $alt) }}
+      {{- with .caption }}
+      <figcaption><p>{{ . | markdownify }}</p></figcaption>
+      {{- end }}
+    </figure>
+    {{- end }}
+  </div>
+  {{- with .Get "caption" }}
+  <figcaption><p>{{ . | markdownify }}</p></figcaption>
+  {{- end }}
+</figure>
