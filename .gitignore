@@ -1,5 +1,6 @@
 *.lock
 .vscode
+CLAUDE.md
 
 public
 resources
