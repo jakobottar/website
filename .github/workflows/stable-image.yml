@@ -3,6 +3,8 @@ name: Docker Image
 on:
   push:
     branches: [ "main" ]
+  # PRs run as a dry run: version + image build, but no login, push, or tag.
+  pull_request:
 
 jobs:
   get_semver:
@@ -33,6 +35,7 @@ jobs:
         with:
           submodules: 'true'
       - name: Login to GHCR
+        if: github.event_name == 'push'
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
@@ -46,7 +49,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
-          push: true
+          push: ${{ github.event_name == 'push' }}
           build-args: VERSION=${{ needs.get_semver.outputs.semVer }}
           tags: |
             ghcr.io/jakobottar/jakobjdev:${{ needs.get_semver.outputs.semVer }}
@@ -55,6 +58,7 @@ jobs:
   create_tag:
     name: Push GitHub Tag
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
     needs:
       - get_semver
       - build_and_publish_image
