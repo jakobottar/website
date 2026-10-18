@@ -6,13 +6,16 @@ on:
   # PRs run as a dry run: version + image build, but no login, push, or tag.
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   get_semver:
       name: Create SemVer
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
-          uses: actions/checkout@v2
+          uses: actions/checkout@v7
           with:
             fetch-depth: 0
         - name: Install GitVersion
@@ -29,28 +32,29 @@ jobs:
     name: Build Docker Image
     runs-on: ubuntu-latest
     needs: get_semver
+    permissions:
+      contents: read
+      packages: write
     steps:
-      - name: Checkout 
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v7
         with:
           submodules: 'true'
       - name: Login to GHCR
         if: github.event_name == 'push'
-        uses: docker/login-action@v1
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v4
       - name: Build and Push
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
           context: ./
           file: ./Dockerfile
-          builder: ${{ steps.buildx.outputs.name }}
           push: ${{ github.event_name == 'push' }}
-          build-args: VERSION=${{ needs.get_semver.outputs.semVer }}
           tags: |
             ghcr.io/jakobottar/jakobjdev:${{ needs.get_semver.outputs.semVer }}
             ghcr.io/jakobottar/jakobjdev:stable
@@ -62,6 +66,8 @@ jobs:
     needs:
       - get_semver
       - build_and_publish_image
+    permissions:
+      contents: write
     steps:
       - name: Create Tag
         uses: actions/github-script@v3
