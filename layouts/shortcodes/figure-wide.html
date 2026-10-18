@@ -1,0 +1,22 @@
+{{- /*
+  Image that breaks out of the text column.
+  {{< figure-wide src="photo.jpg" size="wide|full" caption="..." alt="..." >}}
+*/ -}}
+{{- $size := .Get "size" | default "wide" }}
+{{- if not (in (slice "wide" "full") $size) }}
+  {{- errorf "figure-wide: size must be \"wide\" or \"full\", got %q in %s" $size .Position }}
+{{- end }}
+{{- $img := .Page.Resources.GetMatch (.Get "src") }}
+{{- if not $img }}
+  {{- errorf "figure-wide: image %q not found in page bundle (%s)" (.Get "src") .Position }}
+{{- end }}
+{{- $img = partial "oriented-img.html" $img }}
+{{- $caption := .Get "caption" }}
+{{- $alt := .Get "alt" | default ($caption | markdownify | plainify) }}
+{{- $sizes := cond (eq $size "full") "100vw" "(max-width: 700px) calc(100vw - 28px), min(1100px, calc(100vw - 48px))" }}
+<figure class="figure-{{ $size }}">
+  {{- partial "responsive-img.html" (dict "img" $img "sizes" $sizes "alt" $alt) }}
+  {{- with $caption }}
+  <figcaption><p>{{ . | markdownify }}</p></figcaption>
+  {{- end }}
+</figure>
