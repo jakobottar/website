@@ -1,0 +1,12 @@
+{{- /*
+  Returns the image rotated per its EXIF orientation. Images that need no
+  rotation are returned untouched, so the original file is served as-is
+  instead of a (sometimes larger) re-encode.
+*/ -}}
+{{- $orientation := 1 }}
+{{- with .Exif }}{{ with .Tags.Orientation }}{{ $orientation = int . }}{{ end }}{{ end }}
+{{- $img := . }}
+{{- if ne $orientation 1 }}
+  {{- $img = .Filter images.AutoOrient }}
+{{- end }}
+{{- return $img }}

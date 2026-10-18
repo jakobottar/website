@@ -1,0 +1,17 @@
+{{- /*
+  Responsive <img> for a page-resource image.
+  Params (dict): img (image resource), sizes (string), alt (string)
+*/ -}}
+{{- $img := .img }}
+{{- $srcset := slice }}
+{{- $src := $img }}
+{{- range slice 800 1400 2200 }}
+  {{- if lt . $img.Width }}
+    {{- $r := $img.Resize (printf "%dx q80" .) }}
+    {{- $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink .) }}
+    {{- if eq . 1400 }}{{ $src = $r }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) }}
+<img src="{{ $src.RelPermalink }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ .sizes }}"
+     width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .alt }}" loading="lazy" decoding="async">

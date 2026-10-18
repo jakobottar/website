@@ -5,7 +5,7 @@ draft: false
 tags: ["Photography", "Travel"]
 ---
 
-{{< figure src="./kolob-canyons.jpg#center" caption="Snowy Timber Top Mountain, Kolob Canyon Overlook (*Fujifilm X-S10, 18-55mm*)" >}}
+{{< figure-wide src="kolob-canyons.jpg" caption="Snowy Timber Top Mountain, Kolob Canyon Overlook (*Fujifilm X-S10, 18-55mm*)" >}}
 
 Since grade school I've gone to southern Utah over spring break. Usually it was hiking in Moab (before all the massive new hotels popped up). In recent years I've used it as a spring training camp of sorts, riding bikes in the St. George sun before the roads defrosted up north.
 
@@ -37,7 +37,7 @@ Watching the weather, I knew that Friday the rain would come in, but still for s
 
 The journey itself was fantastic, and you finish at the top of a 600+ foot sheer cliff down to the river below.  
 
-{{< figure src="./scout-lookout-2.jpg#center" caption="Looking down on the Big Bend from Scout Lookout (*iPhone 12*)" >}}
+{{< figure-wide src="scout-lookout-2.jpg" caption="Looking down on the Big Bend from Scout Lookout (*iPhone 12*)" >}}
 
 The 40° F rain on the way back down got pretty miserable, but I made a hot meal and some coffee in the back of my car to warm up. It was definitely a [type-2 fun](https://www.rei.com/blog/climb/fun-scale) day.
 
