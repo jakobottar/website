@@ -30,10 +30,11 @@ jobs:
           sudo dpkg -i hugo.deb
           hugo version
 
-      # Shortcode errorf calls (e.g. missing images) fail the build here.
+      # Shortcode errorf calls (e.g. missing images) fail the build here, and
+      # --panicOnWarning turns any warning (deprecations, spread warnf) into a failure.
       # baseURL "/" keeps links relative so the link check can resolve them on disk.
       - name: Build
-        run: hugo --gc --baseURL / --printPathWarnings
+        run: hugo --gc --baseURL / --printPathWarnings --panicOnWarning
 
       - name: Check expected pages
         run: |
