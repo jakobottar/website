@@ -4,7 +4,9 @@
   instead of a (sometimes larger) re-encode.
 */ -}}
 {{- $orientation := 1 }}
-{{- with .Exif }}{{ with .Tags.Orientation }}{{ $orientation = int . }}{{ end }}{{ end }}
+{{- if reflect.IsImageResourceWithMeta . }}
+  {{- with .Meta.Orientation }}{{ $orientation = . }}{{ end }}
+{{- end }}
 {{- $img := . }}
 {{- if ne $orientation 1 }}
   {{- $img = .Filter images.AutoOrient }}
