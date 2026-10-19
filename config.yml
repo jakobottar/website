@@ -4,7 +4,7 @@ title: 'Jakob Johnson'
 theme: "papermod"
 enableEmoji: true
 # googleAnalytics: UA-136943577-1
-buildDrafts: true
+buildDrafts: false
 
 menu:
   main:
