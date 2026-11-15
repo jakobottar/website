@@ -1,0 +1,22 @@
+# Mirrors the compose file deployed on the server. Traefik runs separately and
+# owns the external traefik_web network, the websecure entrypoint, and the
+# mycerts resolver.
+name: website
+
+services:
+  website:
+    container_name: website
+    image: ghcr.io/jakobottar/jakobjdev:stable
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.jakobjdev.entrypoints=websecure
+      - traefik.http.routers.jakobjdev.rule=Host(`jakobj.dev`)
+      - traefik.http.routers.jakobjdev.tls.certresolver=mycerts
+      - traefik.http.services.jakobjdev.loadbalancer.server.port=8080
+    networks:
+      - traefik_web
+    restart: unless-stopped
+
+networks:
+  traefik_web:
+    external: true
